@@ -1,0 +1,368 @@
+<?xml version="1.0" ?>
+<test-cases>
+  <test-case id="accountinfo" priority="8">
+    <name>Account Info</name>
+    <description>This is to validate account info</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/account/info</url>
+  </test-case>
+  <test-case id="newslist" priority="8">
+    <name>News List</name>
+    <description>This is to validate news list</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/cms/news/list</url>
+  </test-case>
+  <test-case id="articlelist" priority="8">
+    <name>Article List</name>
+    <description>This is to validate article list</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/cms/article/list</url>
+  </test-case>
+  <test-case id="menulist" priority="8">
+    <name>Menu List</name>
+    <description>This is to validate menu list</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/cms/menu/list</url>
+  </test-case>
+  <test-case id="servicelist" priority="8">
+    <name>Service List</name>
+    <description>This is to validate service list</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/cms/service/list</url>
+  </test-case>
+  <test-case id="news1" priority="8">
+    <name>News #1</name>
+    <description>This is to validate news #1</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/cms/news/{1}</url>
+    <params>
+      <url>
+        <param name="1" value="1">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="article55" priority="8">
+    <name>Article #55</name>
+    <description>This is to validate article #55</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/cms/article/{1}</url>
+    <params>
+      <url>
+        <param name="1" value="55">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="service32" priority="8">
+    <name>Service #32</name>
+    <description>This is to validate service #32</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/cms/service/{1}</url>
+    <params>
+      <url>
+        <param name="1" value="32">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="enquirytype" priority="8">
+    <name>Enquiry Type</name>
+    <description>This is to validate enquiry types</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/contactus/enquiry-types</url>
+  </test-case>
+  <test-case id="lettersummary" priority="8">
+    <name>Letters Summary</name>
+    <description>This is to validate letters summary</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/ebox/letter/summary</url>
+  </test-case>
+  <test-case id="valuemailsummary" priority="8">
+    <name>Value email summary</name>
+    <description>This is to validate value email summary</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/ebox/value-mail/summary</url>
+  </test-case>
+  <test-case id="eboxLettersforDate" priority="8">
+    <name>Ebox letters for date</name>
+    <description>This is to validate Ebox letters for date</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/ebox/letter/box/{1}/date/{2}</url>
+    <params>
+      <url>
+        <param name="1" value="299999">
+      </param>
+        <param name="2" value="27092016">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="locationlist" priority="8">
+    <name>Location list</name>
+    <description>This is to validate value location list</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/location/list</url>
+  </test-case>
+  <test-case id="nearlocation" priority="8">
+    <name>Near Location</name>
+    <description>This is to validate nearby location</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/location/nearby</url>
+    <params>
+      <query>
+        <param name="proximity_in_km" value="10">
+      </param>
+        <param name="current_longitude" value="55.3959347">
+      </param>
+        <param name="current_latitude" value="25.3590589">
+      </param>
+    </query>
+  </params>
+</test-case>
+  <test-case id="mailrateOrigin" priority="8">
+    <name>Mail rate origin</name>
+    <description>This is to validate mail rate origin</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/mailrate/origin</url>
+  </test-case>
+  <test-case id="mailratedestination" priority="8">
+    <name>Mail rate destination</name>
+    <description>This is to validate mail rate destination</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/mailrate/destination/local</url>
+  </test-case>
+  <test-case id="mailratedestinationIntl" priority="8">
+    <name>Mail rate destination Intl.</name>
+    <description>This is to validate mail rate destination Intl.</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/mailrate/destination/intl</url>
+  </test-case>
+  <test-case id="poboxbundles" priority="8">
+    <name>P.O. Box bundles</name>
+    <description>This is to validate P.O. Box bundles</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/bundles</url>
+  </test-case>
+  <test-case id="freeboxes" priority="8">
+    <name>Free-boxes</name>
+    <description>This is to validate free-boxes</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/free-boxes/emirate/1/location-type/OFFICE/location/{1}</url>
+    <params>
+      <url>
+        <param name="1" value="7379">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="freeboxareas" priority="8">
+    <name>Free-boxes</name>
+    <description>This is to validate free-boxes</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/free-box-areas/emirate/{1}/location-type/{2}</url>
+    <params>
+      <url>
+        <param name="1" value="1">
+      </param>
+        <param name="2" value="ZONE">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="poboxorders" priority="8">
+    <name>P.O. Box orders</name>
+    <description>This is to validate P.O. Box orders</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/mailrate/destination/local</url>
+  </test-case>
+  <test-case id="poboxordersDetails" priority="8">
+    <name>P.O. Box order details</name>
+    <description>This is to validate P.O. Box order details</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/order-details/{1}</url>
+    <params>
+      <url>
+        <param name="1" value="192152">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="poboxpayments" priority="8">
+    <name>P.O. Box payments</name>
+    <description>This is to validate P.O. Box payments</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/payments</url>
+  </test-case>
+  <test-case id="paymentdetails" priority="8">
+    <name>P.O. Box payment details</name>
+    <description>This is to validate P.O. Box payment details</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/payment-details/{1}</url>
+    <params>
+      <url>
+        <param name="1" value="107852">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="productrentalprices" priority="8">
+    <name>Product Rental prices</name>
+    <description>This is to validate product rental prices</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/product/597/rental-price</url>
+    <params>
+      <query>
+        <param name="duration" value="1">
+      </param>
+        <param name="quantity" value="1">
+      </param>
+        <param name="box_pkid" value="119043">
+      </param>
+    </query>
+  </params>
+</test-case>
+  <test-case id="boxcontracts" priority="8">
+    <name>P.O. Box contracts</name>
+    <description>This is to validate P.O. Box contracts</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/rent-contracts</url>
+  </test-case>
+  <test-case id="previousdues" priority="8">
+    <name>P.O. Box previous dues</name>
+    <description>This is to validate P.O. Box previous dues</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/box/{1}/previous-dues</url>
+    <params>
+      <url>
+        <param name="1" value="2440348">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="aditionalservices" priority="8">
+    <name>P.O. Box additional services</name>
+    <description>This is to validate P.O. Box additional services</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/additional-services</url>
+  </test-case>
+  <test-case id="poboxdues" priority="8">
+    <name>P.O. Box previous dues</name>
+    <description>This is to validate P.O. Box previous dues</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/contract/{1}/dues</url>
+    <params>
+      <url>
+        <param name="1" value="719297">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="track" priority="8">
+    <name>Track</name>
+    <description>This is to validate track</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/track/{1}</url>
+    <params>
+      <url>
+        <param name="1" value="CK209798384FR">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="votingpoll" priority="8">
+    <name>Voting poll</name>
+    <description>This is to validate voting poll</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/votingpoll/list</url>
+  </test-case>
+  <test-case id="notification" priority="8">
+    <name>Notification</name>
+    <description>This is to validate voting poll</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/notifications</url>
+    <params>
+      <query>
+        <param name="timestamp" value="20161012103011">
+      </param>
+    </query>
+  </params>
+</test-case>
+  <test-case id="localentity" priority="8">
+    <name>Local entity</name>
+    <description>This is to local entity</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/localize/entity/{1}</url>
+    <params>
+      <url>
+        <param name="timestamp" value="MAIL_EVENT_ID">
+      </param>
+    </url>
+  </params>
+</test-case>
+  <test-case id="meta" priority="8">
+    <name>Meta</name>
+    <description>This is to validate meta data</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/meta?=20160821</url>
+    <params>
+      <query>
+        <param name="timestamptimestamp" value="20160821">
+      </param>
+    </query>
+  </params>
+</test-case>
+  <test-case id="bundlePrice" priority="8">
+    <name>Bundle Price</name>
+    <description>This is to validate bundle prices</description>
+    <schedule>0 0/20 * * * ?</schedule>
+    <verb>GET</verb>
+    <url>https://www.epg.ae/api_mobile/pobox/product/{1}/bundle-price</url>
+    <params>
+      <query>
+        <param name="contract_type" value="P">
+      </param>
+        <param name="duration_year" value="2017">
+      </param>
+    </query>
+      <url>
+        <param name="1" value="599">
+      </param>
+    </url>
+  </params>
+</test-case>
+</test-cases>

@@ -1,0 +1,459 @@
+<?xml version="1.0" ?>
+<test-cases>
+    <test-case id="healthcheck" priority="3" active="true">
+        <name>Mobile API - Health check</name>
+        <description>Check whether the application is running</description>
+        <schedule>31 26 */1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/health-check</url>
+    </test-case>
+    <test-case id="init" priority="4" active="true">
+        <name>Mobile API - init</name>
+        <description>Should be called while the application starts</description>
+        <schedule>31 26 */6 * * ?</schedule>
+        <verb>POST</verb>
+        <url>http://intranet/api_mobile/init</url>
+        <params>
+            <formdata>
+                <param name="app_token" value="toKMcMS0IqL0TtGSoFL3"></param>
+                <param name="device_id" value="f12321321355899kkRRwe"></param>
+                <param name="device_name" value="Samsung N9005"></param>
+                <param name="os" value="android"></param>
+                <param name="app_version" value="1.0.0"></param>
+                <param name="os_version" value="Android 4.5"></param>
+            </formdata>
+        </params>
+    </test-case>
+    <test-case id="login" priority="5" active="true" session="true">
+        <name>Mobile API - login</name>
+        <description>EPG Lcocal Account Login</description>
+        <schedule>32 26 */6 * * ?</schedule>
+        <verb>POST</verb>
+        <url>http://intranet/api_mobile/account/login</url>
+        <params>
+            <formdata>
+                <param name="username" value="bmtest"></param>
+                <param name="password" value="bm123"></param>
+                <param name="question" value=""></param>
+                <param name="answer" value=""></param>
+                <param name="auth_type" value="PWD_ONLY"></param>
+            </formdata>
+        </params>
+    </test-case>
+    <test-case id="userExsist" active="true" session="true">
+        <name>Mobile API - User exist</name>
+        <description>To check if the user exist in the system</description>
+        <schedule>32 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/account/username-exists</url>
+        <params>
+            <query>
+                <param name="username" value="bmtest"></param>
+            </query>
+        </params>
+    </test-case>
+    <test-case id="accountinfo" active="true" login="true">
+        <name>Mobile API - User Account info</name>
+        <description>To check if the users account info exist in the system</description>
+        <schedule>32 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/account/info</url>
+    </test-case>
+    <test-case id="newslist" active="true" session="true">
+        <name>Mobile API - CMS NewsList</name>
+        <description>Get the news list from CMS</description>
+        <schedule>33 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/cms/news/list</url>
+    </test-case>
+    <test-case id="articlelist" active="true" session="true">
+        <name>Mobile API - CMS Article List</name>
+        <description>Get the article list from CMS</description>
+        <schedule>35 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/cms/article/list</url>
+    </test-case>
+    <test-case id="menulist" active="true" session="true">
+        <name>Mobile API - CMS Menu List</name>
+        <description>Get the menu list from CMS</description>
+        <schedule>36 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/cms/menu/list</url>
+    </test-case>
+    <test-case id="servicelist" active="true" session="true">
+        <name>Mobile API - CMS Service List</name>
+        <description>Get the service list from CMS</description>
+        <schedule>24 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/cms/service/list</url>
+    </test-case>
+    <test-case id="news1" active="true" session="true">
+        <name>Mobile API -CMS news</name>
+        <description>Get a specific news from CMS</description>
+        <schedule>37 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/cms/news/1</url>
+    </test-case>
+    <test-case id="article55" active="true" session="true">
+        <name>Mobile API - CMS Article</name>
+        <description>Get a specific article from CMS</description>
+        <schedule>38 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/cms/article/55</url>
+    </test-case>
+    <test-case id="service32" active="true" session="true">
+        <name>Mobile API - CMS Service</name>
+        <description>Get a specific service from CMS</description>
+        <schedule>39 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/cms/service/32</url>
+    </test-case>
+    <test-case id="enquirytype" active="true" session="true">
+        <name>Mobile API - Contact Us Enquirytype</name>
+        <description>Get all the enquiry types</description>
+        <schedule>40 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/contactus/enquiry-types</url>
+    </test-case>
+    <test-case id="lettersummary" active="true" login="true">
+        <name>Mobile API - Ebox Letter Summary</name>
+        <description>Get all the letters summary by date</description>
+        <schedule>41 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/ebox/letter/summary</url>
+    </test-case>
+    <test-case id="valuemailsummary" active="true" login="true">
+        <name>Mobile API - Ebox Value Mail Summary</name>
+        <description>Get the value mail summary</description>
+        <schedule>42 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/ebox/value-mail/summary</url>
+    </test-case>
+    <test-case id="eboxLettersforDate" active="true" login="true">
+        <name>Mobile API - Ebox Letters For Date</name>
+        <description>See the letter for a date</description>
+        <schedule>42 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/ebox/letter/box/299999/date/27092016</url>
+    </test-case>
+    <test-case id="locationlist" active="true" session="true">
+        <name>Mobile API - Location List</name>
+        <description>Get all post office locations</description>
+        <schedule>43 26 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/location/list</url>
+    </test-case>
+    <test-case id="nearlocation" active="true" session="true">
+        <name>Mobile API - Near Location</name>
+        <description>Get the nearest post office</description>
+        <schedule>22 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/location/nearby</url>
+        <params>
+            <query>
+                <param name="proximity_in_km" value="10"></param>
+                <param name="current_longitude" value="55.3959347"></param>
+                <param name="current_latitude" value="25.3590589"></param>
+            </query>
+        </params>
+    </test-case>
+    <test-case id="mailrateOrigin" active="true" session="true">
+        <name>Mobile API - Mailrate Origin</name>
+        <description>Get the list of place where the shipment originates</description>
+        <schedule>44 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/mailrate/origin</url>
+    </test-case>
+    <test-case id="mailratedestination" active="true" session="true">
+        <name>Mobile API - Mailrate Destination</name>
+        <description>Get the list of place where the shipment is destined to go. </description>
+        <schedule>45 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/mailrate/destination/local</url>
+    </test-case>
+    <test-case id="poboxbundles" active="true" session="true">
+        <name>Mobile API - Pobox Bundles</name>
+        <description>Get all the bundles available in the post box for renting</description>
+        <schedule>45 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/bundles</url>
+    </test-case>
+    <test-case id="freeboxes" active="true" session="true">
+        <name>Mobile API - Free Boxes</name>
+        <description>Check all the Free Boxes for emirate, and location and box type</description>
+        <schedule>46 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/free-boxes/emirate/{1}/location-type/{2}/location/{3}</url>
+        <params>
+            <url>
+                <param name="1" value="1"></param>
+                <param name="2" value="OFFICE"></param>
+                <param name="3" value="7379"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="freeboxareas" active="true" session="true">
+        <name>Mobile API - Free Box Areas</name>
+        <description>Check all the Free Boxes for emirate, and location</description>
+        <schedule>47 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/free-box-areas/emirate/{1}/location-type/{2}</url>
+        <params>
+            <url>
+                <param name="1" value="1"></param>
+                <param name="2" value="ZONE"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="poboxorders" active="true" login="true">
+        <name>Mobile API - Po Box Orders</name>
+        <description>Orders made in the account</description>
+        <schedule>47 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/orders</url>
+    </test-case>
+    <test-case id="poboxpayments" active="true" login="true">
+        <name>Mobile API - PO Box Payments</name>
+        <description>Get all payment histories</description>
+        <schedule>49 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/payments</url>
+    </test-case>
+    <test-case id="paymentdetails" active="true" login="true">
+        <name>Mobile API - PO Box Payment Details</name>
+        <description>Get details of a payment </description>
+        <schedule>17 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/payment-details/{1}</url>
+        <params>
+            <url>
+                <param name="1" value="107852"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="productrentalprices" active="true" login="true">
+        <name>Mobile API - PO Box Product Rental Prices</name>
+        <description>Get all the rental price for a specific product</description>
+        <schedule>16 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/product/{1}/rental-price</url>
+        <params>
+            <query>
+                <param name="duration" value="1"></param>
+                <param name="quantity" value="1"></param>
+                <param name="box_pkid" value="119043"></param>
+            </query>
+            <url>
+                <param name="1" value="597"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="boxcontacts" active="true" login="true">
+        <name>Mobile API - PO Box Contacts</name>
+        <description>See all the rent contract</description>
+        <schedule>51 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/rent-contracts</url>
+    </test-case>
+    <test-case id="previousdues" active="true" login="true">
+        <name>Mobile API - PO Box Previousdues</name>
+        <description>Check the previous dues in a pobox contract</description>
+        <schedule>51 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/box/{1}/previous-dues</url>
+        <params>
+            <url>
+                <param name="1" value="2440348"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="aditionalservices" active="true" session="true">
+        <name>Mobile API - PO Box Aditional Services</name>
+        <description>Get all service added to the po box</description>
+        <schedule>52 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/additional-services</url>
+    </test-case>
+    <test-case id="poboxdues" active="true" login="true">
+        <name>Mobile API - PO Box Dues</name>
+        <description>Check the current dues in a pobox contract</description>
+        <schedule>15 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/contract/{1}/dues</url>
+        <params>
+            <url>
+                <param name="1" value="719297"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="track" active="true" login="true">
+        <name>Mobile API - Shipment Track</name>
+        <description>Track a shipment by Tracking Number</description>
+        <schedule>53 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/track/{1}</url>
+        <params>
+            <url>
+                <param name="1" value="CK209798384FR"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="votingpoll" active="true" session="true">
+        <name>Mobile API - voting Poll</name>
+        <description>Voting Poll List</description>
+        <schedule>53 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/votingpoll/list</url>
+    </test-case>
+    <test-case id="votingpollresults" active="true" session="true">
+        <name>Mobile API - Voting Poll Results</name>
+        <description>Get Voting Poll results</description>
+        <schedule>54 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/votingpoll/{1}/results</url>
+        <params>
+            <url>
+                <param name="1" value="poll55"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="notification" active="true" login="true">
+        <name>Mobile API - Notification</name>
+        <description>Get notifications for the customer</description>
+        <schedule>56 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/notifications</url>
+        <params>
+            <query>
+                <param name="timestamp" value="20161012103011"></param>
+            </query>
+        </params>
+    </test-case>
+    <test-case id="localentity" active="true" session="true">
+        <name>Mobile API - Local Entity</name>
+        <description>Get specific bundle</description>
+        <schedule>57 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/localize/entity/{1}</url>
+        <params>
+            <url>
+                <param name="1" value="MAIL_EVENT_ID"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="mobileapimetadata" priority="11" active="true" session="true">
+        <name>Mobile API - Meta Data</name>
+        <description>Application Meta Data</description>
+        <schedule>58 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/meta</url>
+        <params>
+            <query>
+                <param name="timestamp" value="20160821"></param>
+            </query>
+        </params>
+    </test-case>
+    <test-case id="bundlePrice" priority="11" active="true" session="true">
+        <name>Mobile API - PO Box Bundle Price</name>
+        <description>Get all the rental price for a bundle</description>
+        <schedule>59 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/pobox/product/{1}/bundle-price</url>
+        <params>
+            <query>
+                <param name="contract_type" value="P"></param>
+                <param name="duration_year" value="2017"></param>
+            </query>
+            <url>
+                <param name="1" value="599"></param>
+            </url>
+        </params>
+    </test-case>
+    <test-case id="rentPostboxMetadata" priority="8" active="true">
+        <name>Rent P.O. Box - meta data</name>
+        <description>Rent P.O. Box - application meta data</description>
+        <schedule>12 27 */2 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/rentpostbox/api/rentpobox/applicationformdata?lang=en</url>
+    </test-case>
+    <test-case id="poboxAvailability" priority="10" active="true">
+        <name>Rent P.O Box - available PO Box Numbers</name>
+        <description>Available PO Box Numbers</description>
+        <schedule>02 27 */6 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/rentpostbox/api/rentpobox/pobox/availability?poboxNumber=5556</url>
+    </test-case>
+    <test-case id="poboxRentalPrice" priority="11" active="true">
+        <name>Rent P.O Box - Rental product price</name>
+        <description>Service prices for rent P.O box</description>
+        <schedule>00 27 */1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/rentpostbox/api/rentpobox/pobox/product/rental-price</url>
+    </test-case>
+    <test-case id="customer_info" priority="12" active="true">
+        <name>Customer Management Service - Customer Info</name>
+        <description>get customer profile info of customer 174535</description>
+        <schedule>03 27 */1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/svc_customermanagement/rs/customer_profile/174535/info</url>
+    </test-case>
+    <test-case id="config_mgmt" priority="12" active="true">
+        <name>Config Management Service - Setting Info</name>
+        <description>Get setting info for dev moi ws</description>
+        <schedule>04 27 */1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/svc_configmanagement/rs/config/setting/dev_moi_ws_personinquiry</url>
+    </test-case>
+    <test-case id="locations_list" priority="12" active="true">
+        <name>Postal Mail Service - UAE Postal Location List</name>
+        <description>Get list of uae locations</description>
+        <schedule>05 27 */1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/svc_postalmail/rs/lookup/uaelocations</url>
+    </test-case>
+    <test-case id="web_site_ar" priority="12" active="true">
+        <name>EPG Gov - Arabic Website</name>
+        <description>Home Page</description>
+        <schedule>11 27 */1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/portal</url>
+    </test-case>
+    <test-case id="web_site_en" priority="12" active="true">
+        <name>EPG Gov - English Website</name>
+        <description>Home Page</description>
+        <schedule>07 27 */1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/portal/_en/index.xhtml</url>
+    </test-case>
+    <test-case id="eservice_site" priority="12" active="true">
+        <name>EPG Eservices - Website</name>
+        <description>Landing Page</description>
+        <schedule>08 */30 * * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/esvc</url>
+    </test-case>
+    <test-case id="cs_uname_1" priority="12" active="true">
+        <name>Customer Management Service - User Name</name>
+        <description>Check if user name is available (unavailable)</description>
+        <schedule>09 */5 * * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/svc_customermanagement/rs/admin/is_uname_available</url>
+        <params>
+            <header>
+                <param name="uname" value="faisalsa"></param>
+            </header>
+        </params>
+    </test-case>
+    <test-case id="cs_uname_2" priority="12" active="true">
+        <name>Customer Management Service - User Name</name>
+        <description>Check if user name is available (available)</description>
+        <schedule>09 */30 * * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/svc_customermanagement/rs/admin/is_uname_available</url>
+        <params>
+            <header>
+                <param name="uname" value="donkey"></param>
+            </header>
+        </params>
+    </test-case>
+</test-cases>

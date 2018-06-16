@@ -1,0 +1,45 @@
+package com.epg.mobile.utils;
+
+public class AppConstants {
+	public static final String SYSTEM_SEPARATOR = System.getProperty("file.separator");
+	public static final String OUT_DIR = "out_dir";
+	public static final String OUT_DIR_NAME = "automated_tests";
+	public static final String TEST_XMLS_FOLDER_NAME = "test_xmls";
+	public static final String TEST_XMLS_FILE_NAME = "urls.xml";
+	public static final String PROPS_FILE_NAME = "app.properties";
+	public static final String RESULTS_DIR_NAME = "results";
+	public static final String HTTP_VERB_GET = "GET";
+	public static final String HTTP_VERB_POST = "POST";
+	public static final String COMPLETED_JOB_INFO_FILE_NAME = "all-completed-jobs.txt";
+	public static final String RESULTS_RETENTION_JOB_ID = "results-retention";
+	public static final String RUN_NOW = "_now";
+	public static final String TEST_RESULT_LOCATION_KEY = "result-location";
+	public static final String EMAIL_BODY_TEMPLATE_NAME = "email_body_template";
+	public static final String EMAIL_SUBJECT_TEMPLATE_NAME = "email_subject_template";
+	public static final String SMS_TEMPLATE_NAME = "sms_template";
+	public static final String SMS_MESSAGE_NAME = "sms_message";
+	public static final String TEST_CASE_OBJECT_NAME = "tc";
+	public static final String EMAIL_TO_NAME = "email-to";
+	public static final String EMAIL_CC_NAME = "email-cc";
+	public static final String EMAIL_FROM_USER_NAME = "email-from";
+	public static final String TEST_CASE_RESULT_OBJECT_NAME = "testCaseResult";
+	public static final String APP_SESSION_NAME = "app-session";
+	public static final String USER_SESSION_NAME = "user-session";
+	public static final String LOGIN_USER_NAME = "username";
+	public static final String LOGIN_PASSWORD_NAME = "password";
+	public static final String SMS_NUMBERS_NAME = "sms_numbers";
+	public static final String FAILED = "fail";
+	public static final String SMS_SOURCE_ID = "sourceID";
+	public static final String SMS_SOURCE_GUID = "sourceGUID";
+	public static final String SMS_MAX_SIZE = "sms_max_size";
+	public static final String SMS_AUTHTOKEN_API = "sms_authtoken_api";
+	public static final String SMS_AUTH_PASS = "authPass";
+	public static final String SMS_ENABLE = "sms_enable";
+	public static final String RESULTS_FOLDER_NAME = "results";
+	public static final String RESULTS_RETENTION_DURATION = "results_retention_duration";
+	public static final String RESULTS_RETENTION_LAST_RUN_TIME = "retention_job_last_runtime";
+	public static final String SMS_JOB_ID = "sms-job";
+	public static final String RESULTS_RETENTION_CRON = "results_retention_cron";
+	public static final String SMS_JOB_CRON = "sms_job_cron";
+	public static final String RESULTS_RETENTION_START_DATE = "results_retention_start";
+}

@@ -1,0 +1,52 @@
+<div id="schedule-main" class="row" ng-controller="AlertsController as alertsCtrl">
+    <div class="col-md-12 tab-heading">
+        <h4>Alerts</h4>
+        <div class="row alerts-filter-row">
+            <!--
+            <div class="col-md-4">
+                <select class="form-control" ng-model="selected_status">
+                    <option value="">All</option>
+                    <option selected="" value="fail">Failed</option>
+                    <option value="pass">Pass</option>
+                </select>
+            </div>
+            -->
+            <div class="col-md-12">
+                <span class="pull-right">Showing {{alerts.length}} alerts</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Started at</th>
+                        <th>Completed at</th>
+                        <th title="milli seconds">Test duration(ms)</th>
+                    </tr>
+                    <tr ng-repeat="d in alerts | filter:{status: selected_status}">
+                        <td title="{{d.testCase.url}}"><a ui-sref="test-history({testCaseId:d.testCase.id})">
+                                {{d.testCase.name}}</a></td>
+                        <td>{{d.testCase.description}}</td>
+                        <td><span ng-class="(d.testCase.id.indexOf('_now') !== -1) ? 'icon icon-bolt':
+                            'icon icon-back-in-time'"
+                            ng-attr-title="{{(d.testCase.id.indexOf('_now') !== -1) ? 'Run Now': 'Scheduled'}}">
+                            </span></td>
+                        <td ng-if="d.status === 'PASS'" class="passed-testcase-status"
+                            >{{d.status}}</td>
+                        <td title="View details" ng-if="d.status === 'FAIL'" class="failed-testcase-status" 
+                            ><a ui-sref="test-details({location:d.resultLocation})">
+        <!-- ng-click="viewDetails({'result_location':d.resultLocation,'test_case': d.testCase})" -->
+                {{d.status}}</a></td>
+                        <td>{{moment(d.startTime, 'YYYY-MM-DDTHH:mm:ss').format('DD-MMM-YYYY HH:mm:ss')}}</td>
+                        <td>{{moment(d.endTime, 'YYYY-MM-DDTHH:mm:ss').format('DD-MMM-YYYY HH:mm:ss')}}</td>
+                        <td>{{d.testDuration}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

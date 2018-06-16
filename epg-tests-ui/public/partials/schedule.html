@@ -1,0 +1,96 @@
+<div id="schedule-main" class="row" ng-controller="SchedulerController as scheduleCtrl">
+    <div class="col-md-12 tab-heading">
+        <h4>Scheduled Test Cases</h4>
+        <div class="row">
+            <div class="col-md-10">
+                <form class="form-horizontal">
+                   <button class="btn btn-primary"
+                        ng-disabled="!all_jobs_selected && !atLeastOneSelected"
+                        title="Run now"
+                        ng-click="activateSelected(true)">Activate</button>
+                    <button class="btn btn-danger"
+                        ng-disabled="!all_jobs_selected && !atLeastOneSelected"
+                        title="Run now"
+                        ng-click="activateSelected(false)">De-activate</button>
+                </form>
+            </div>
+            <div class="col-md-2">
+                <span class="pull-right">Showing {{scheduled_tests.length}} jobs</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 scheduled-tests-table-div">
+                <table class="table table-hover">
+                    <tr>
+                        <th><input type="checkbox" id="select-all"
+                                ng-model="all_jobs_selected"
+                                ng-change="selectDeselectAll()"/></th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Last run</th>
+                        <th>Next run</th>
+                        <th>Frequency</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr ng-repeat="d in scheduled_tests"
+                        ng-class="(d.testCase.active && d.testCase.active === 'false') ? 'unscheduled-job' : ''"
+                        ng-attr-title="{{(d.testCase.active && d.testCase.active === 'false') ? 'In-active test':''}}"
+                        >
+                        <td><input type="checkbox" id="{{d.testCase.id}}"
+                            ng-model="selected_jobs[d.testCase.id]"
+                            ng-change="selectIndividualJob()"/></td>
+                        <td title="{{d.testCase.url}}">
+                            <a class="history-link" ui-sref="test-history({testCaseId:d.testCaseId})">
+                                {{d.testCase.name}}
+                            </a>
+                        </td>
+                        <td>{{d.testCase.description}}</td>
+                        <td>
+                            <img ng-if="current_running[d.testCaseId]" src="/web_testportal/images/Spinner.gif" />
+                            <span ng-if="!current_running[d.testCaseId]"
+                                title="Last run status: {{lastrun[d.testCaseId].status}}"
+                                ng-class="(lastrun[d.testCaseId].status === 'PASS')
+                                ?'text-green tc-status-icon icon icon-check-circle-o':
+                                ((lastrun[d.testCaseId].status === 'FAIL') ?
+                            'text-red tc-status-icon icon icon-times-circle-o': '')"></span>
+                                <span ng-if="!current_running[d.testCaseId]">
+                                    {{lastrun[d.testCaseId] ?
+                                (moment(lastrun[d.testCaseId].endTime,
+                                'YYYY-MM-DDTHH:mm').isSame(moment(), 'day')) ?
+                                (moment(lastrun[d.testCaseId].endTime,
+                                'YYYY-MM-DDTHH:mm').format('HH:mm')) :
+                            (moment(lastrun[d.testCaseId].endTime,
+                                'YYYY-MM-DDTHH:mm').format('HH:mm - DD-MMM-YYYY'))
+                            :''
+                            }}</span></td>
+                        <td>{{(d.nextRun) ?
+                            ((moment(d.nextRun).isSame(moment(), 'day'))
+                                ? (moment(d.nextRun).format('HH:mm'))
+                                :moment(d.nextRun).format('HH:mm DD-MMM-YYYY')):'-'}}</td>
+                        <td>
+                            <select class="form-control"
+                                ng-model="d.testCase.schedule">
+                                <option value="{{c.value}}"
+                                    ng-repeat="c in d.cron_schedules">{{c.display}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="schedule-table-buttons">
+                                <button class="btn btn-primary"
+                                    ng-click="saveSchedule(d.testCase)"
+                                    title="Save">Save</button>
+                                <button class="btn btn-success"
+                                    title="Run now"
+                                    ng-disabled="current_running[d.testCaseId]"
+                                    ng-click="runNowTestCase(d.testCase)">
+                                    Run now
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

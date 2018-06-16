@@ -1,0 +1,15 @@
+.DS_Store
+mobile-api-tests/.idea/
+mobile-api-tests/*.iml
+mobile-api-tests/test-output/
+mobile-api-tests/.settings/
+mobile-api-tests/.project
+mobile-api-tests/target/
+mobile-api-tests/.classpath
+mobile-api-tests/src/main/webapp/public/
+epg-tests-ui/node_modules/
+epg-tests-ui/*.log
+mobile-api-tests/transaction-logs/
+automated_tests_config/results/
+mobile-api-tests/D:\\automated_tests/
+/.gradle/

@@ -1,0 +1,60 @@
+<!Doctype html>
+<html ng-app="app" lang="en">
+	<head>
+		<title>Automated Tests - Console : Mobile API Tests</title>
+		<meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<base href="/">
+	<link href="web_testportal/css/style.css" rel="stylesheet"></head>
+	<body>
+		<div id="epg-ui-alerts"
+			class="epg-ui-alerts" ng-controller="UIAlertsController as uiAlertsCtrl">
+			<div class="alert alert-{{type}}">
+				<strong>{{typeName}}!</strong> {{message}}
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Automated Test - console</h2>
+				</div>
+				<div class="col-md-12" ng-controller="NavCtrl as navCtrl">
+					<ul class="nav nav-tabs">
+						<li ng-class="(selected_tab === 'alerts') ? 'active tab-pane': 'tab-pane'"
+							ng-click="selected_tab = tabs[0]; hideDetails();
+								 hideHistory();">
+							<a ui-sref-active="active" ui-sref="alerts">Alerts</a>
+						</li>
+						<li ng-class="(selected_tab === 'schedule') ? 'active tab-pane': 'tab-pane'"
+							ng-click="selected_tab = tabs[1]; hideDetails();
+								 hideHistory();">
+							<a ui-sref="schedule">Schedule</a>
+						</li>
+						<li ng-class="(selected_tab === 'tests-configuration') ? 'active tab-pane': 'tab-pane'"
+							ng-click="selected_tab = tabs[2]; hideDetails();
+								 hideHistory();">
+							<a ui-sref="tests-configuration">Tests - Configuration</a>
+						</li>
+						<li ng-if="show_details"
+							ng-class="(selected_tab === 'test-details') ? 'active tab-pane': 'tab-pane'"
+							ng-click="selected_tab = tabs[3]; hideHistory(); ">
+							<a ui-sref="test-details" >Details</a>
+						</li>
+						<li ng-class="(selected_tab === 'admin') ? 'active tab-pane': 'tab-pane'"
+							ng-click="selected_tab = tabs[4]; hideDetails(); hideHistory();">
+							<a ui-sref="admin">System Configuration</a>
+						</li>
+						<li ng-if="show_history"
+							ng-class="(selected_tab === 'test-history') ? 'active tab-pane': 'tab-pane'"
+							ng-click="selected_tab = tabs[5]; hideDetails(); ">
+							<a ui-sref="test-history">History</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+			<div ui-view></div>
+		</div>
+	<script type="text/javascript" src="web_testportal/js/app.js"></script></body>
+</html>

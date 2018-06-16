@@ -1,0 +1,56 @@
+<div id="tests-config-main" class="row" ng-controller="TestsConfigurationController as testsConfigCtrl">
+    <div class="col-md-12 tab-heading">
+        <h4>Tests Configuration XML </h4>
+        <div class="col-md-12 schedule_form">
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">XML file: </label>
+                            <div class="col-sm-5">
+                                <input type="file" class="form-control" id="xml-file-upload" name="urls.xml">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button class="btn btn-primary" 
+                            ng-click="uploadXML()">Upload latest file</button>
+                    </div>
+                </div>
+                <div class="row config-row">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <a href="{{download_href_prefix}}/download-sample-file?file=urls.xml">
+                                <span>Download sample file</span>
+                            </a>
+                        </div>
+                </div>
+
+                <div class="row" ng-if="uploading">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <img src="/web_testportal/images/SpinnerBig.gif" />
+                    </div>
+                </div>
+
+                <div class="row config-row" ng-if="!last_upload_timestamp && !uploading">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="warn">
+                                <span>
+                                        No file is uploaded. Please upload XML file to run the test.
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row config-row" ng-if="last_upload_timestamp && !uploading">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <a href="{{download_href_prefix}}/download-recent-file?file=urls.xml">
+                                <span>Download currently uploaded file</span></a>
+                        <span class="">&nbsp;Last upload time: 
+                                    {{moment(last_upload_timestamp).format('DD-MMMM-YYYY HH:mm:ss')}}</span>
+                    </div>
+                </div>
+            </form>
+        </div>    
+    </div>
+</div>

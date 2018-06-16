@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<test-cases>
+	<test-case id="productrentalprices" active="true" 
+		priority="1" login="false" session="false" proxy="false">
+		<name>Product Rental prices</name>
+		<description>This is to validate product rental prices</description>
+		<schedule>0 0/5 * * * ?</schedule>
+		<verb>GET</verb>
+		<url>https://www.epg.ae/api_mobile/pobox/product/{1}/rental-price</url>
+		<params>
+			<header>
+				<param name="X-JWT" value="token-value"></param>
+			</header>
+			<!-- url is for url path params -->
+			<url>
+				<param name="1" value="597"></param>
+			</url>
+			<!-- query is url query params -->
+			<query>
+				<param name="duration" value="1"></param>
+			</query>
+			<!-- formdata only for post -->
+			<formdata>
+				<param name="" value=""></param>
+			</formdata>
+		</params>
+	</test-case>
+</test-cases>

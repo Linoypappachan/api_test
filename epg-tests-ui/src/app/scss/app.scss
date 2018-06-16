@@ -1,0 +1,88 @@
+
+.schedule_radio_label {
+    font-weight: normal !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bottom-border {
+    border-bottom: 1px solid grey;
+    padding: 5px 0px;
+}
+
+.warn {
+    border: 1px solid lightsalmon;
+    margin: 20px 0px;
+    border-radius: 6px;
+    background-color: lightsalmon;
+    padding: 5px 2px;
+    width: 50%;
+}
+
+.failed-testcase-status {
+    background-color: lightcoral;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.passed-testcase-status {
+    background-color: lightgreen;
+}
+
+.unscheduled-job {
+    background-color: #ddd !important;
+    font-style: italic;
+    color: #777;
+}
+
+.label_td {
+    font-weight: bold;
+}
+
+.scheduled-tests-table-div {
+    margin-top: 10px;
+    span {
+        margin: 5px;
+    }
+}
+
+.text-red {
+    color: red;
+}
+
+.text-green {
+    color: lightgreen;
+}
+
+.alerts-filter-row {
+    margin: 5px 0px 10px 0px;
+}
+
+.schedule-table-buttons {
+    min-width:150px;
+}
+
+.history-link {
+    cursor: pointer;
+}
+.sms-enable-checkbox:focus {
+    border: none !important;
+    outline:none !important;
+    box-shadow: none !important;
+    border-radius: none !important;
+}
+
+.config-row {
+    margin-top: 20px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.italic-bold {
+    font-style: italic;
+    font-weight: bold;
+}

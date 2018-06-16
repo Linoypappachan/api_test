@@ -1,0 +1,1 @@
+Test case - ${tc.name} has <#if testCaseResult.status == "PASS"> passed <#else> failed </#if>

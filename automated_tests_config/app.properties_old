@@ -1,0 +1,5 @@
+#Downloaded at : Tue Jul 18 22:57:02 GST 2017
+#Tue Jul 18 22:57:02 GST 2017
+system_cron=55 0/1 * * * ?
+out_dir=/Users/muqsithirfan/Development/office/java_projects/api-tests/automated_tests_config
+results_retention_duration=1h

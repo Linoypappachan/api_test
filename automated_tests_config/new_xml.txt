@@ -1,0 +1,45 @@
+<test-cases>
+    <test-case  name="Account Info" description="This is to validate " schedule="* ">
+		<verb>GET</verb>
+		<url>"https://www.epg.ae/api_mobile/account/info"</url>
+		<params>
+			<header></header>
+			<query></query>
+			<form></form>
+		</params>
+	</test-case>
+    <test-case  name="newslist" value="https://www.epg.ae/api_mobile/cms/news/list"></test-case>
+    <test-case  name="articlelist" value="https://www.epg.ae/api_mobile/cms/article/list"></test-case>
+    <test-case  name="menulist" value="https://www.epg.ae/api_mobile/cms/menu/list"></test-case>
+    <test-case  name="servicelist" value="https://www.epg.ae/api_mobile/cms/service/list"></test-case>
+    <test-case  name="news1" value="https://www.epg.ae/api_mobile/cms/news/1"></test-case>
+    <test-case  name="article1" value="https://www.epg.ae/api_mobile/cms/article/55"></test-case>
+    <test-case  name="service1" value="https://www.epg.ae/api_mobile/cms/service/32"></test-case>
+    <test-case  name="enquirytype" value="https://www.epg.ae/api_mobile/contactus/enquiry-types"></test-case>
+    <test-case  name="lettersummary" value="https://www.epg.ae/api_mobile/ebox/letter/summary"></test-case>
+    <test-case  name="valuemailsummary" value="https://www.epg.ae/api_mobile/ebox/value-mail/summary"></test-case>
+    <test-case  name="eboxLettersforDate" value="https://www.epg.ae/api_mobile/ebox/letter/box/299999/date/27092016"></test-case>
+    <test-case  name="locationlist" value="https://www.epg.ae/api_mobile/location/list"></test-case>
+    <test-case  name="nearlocation" value="https://www.epg.ae/api_mobile/location/nearby?proximity_in_km=10&amp;current_longitude=55.3959347&amp;current_latitude=25.3590589"></test-case>
+    <test-case  name="mailrateOrigin" value="https://www.epg.ae/api_mobile/mailrate/origin"></test-case>
+    <test-case  name="mailratedestination" value="https://www.epg.ae/api_mobile/mailrate/destination/local"></test-case>
+    <test-case  name="mailratedestinationIntl" value="https://www.epg.ae/api_mobile/mailrate/destination/intl"></test-case>
+    <test-case  name="poboxbundles" value="https://www.epg.ae/api_mobile/pobox/bundles"></test-case>
+    <test-case  name="freeboxes" value="https://www.epg.ae/api_mobile/pobox/free-boxes/emirate/1/location-type/OFFICE/location/7379"></test-case>
+    <test-case  name="freeboxareas" value="https://www.epg.ae/api_mobile/pobox/free-box-areas/emirate/1/location-type/ZONE"></test-case>
+    <test-case  name="poboxorders" value="https://www.epg.ae/api_mobile/pobox/orders"></test-case>
+    <test-case  name="poboxordersDetails" value="https://www.epg.ae/api_mobile/pobox/order-details/192152"></test-case>
+    <test-case  name="poboxpayments" value="https://www.epg.ae/api_mobile/pobox/payments"></test-case>
+    <test-case  name="paymentdetails" value="https://www.epg.ae/api_mobile/pobox/payment-details/107852"></test-case>
+    <test-case  name="productrentalprices" value="https://www.epg.ae/api_mobile/pobox/product/597/rental-price?duration=1&amp;quantity=1&amp;box_pkid=119043"></test-case>
+    <test-case  name="boxcontacts" value="https://www.epg.ae/api_mobile/pobox/rent-contracts"></test-case>
+    <test-case  name="previousdues" value="https://www.epg.ae/api_mobile/pobox/box/2440348/previous-dues"></test-case>
+    <test-case  name="aditionalservices" value="https://www.epg.ae/api_mobile/pobox/additional-services"></test-case>
+    <test-case  name="poboxdues" value="https://www.epg.ae/api_mobile/pobox/contract/719297/dues"></test-case>
+    <test-case  name="track" value="https://www.epg.ae/api_mobile/track/CK209798384FR"></test-case>
+    <test-case  name="votingpoll" value="https://www.epg.ae/api_mobile/votingpoll/list"></test-case>
+    <test-case  name="notification" value="https://www.epg.ae/api_mobile/notifications?timestamp=20161012103011"></test-case>
+    <test-case  name="localentity" value="https://www.epg.ae/api_mobile/localize/entity/MAIL_EVENT_ID"></test-case>
+    <test-case  name="meta" value="https://www.epg.ae/api_mobile/meta?timestamp=20160821"></test-case>
+    <test-case  name="bundlePrice" value="https://www.epg.ae/api_mobile/pobox/product/599/bundle-price?contract_type=P&amp;duration_year=2017"></test-case>
+</test-cases>

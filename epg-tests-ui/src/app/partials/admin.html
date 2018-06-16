@@ -1,0 +1,349 @@
+<div id="admin-main" class="row" ng-controller="AdminController as adminCtrl">
+    <div class="col-md-12 tab-heading">
+        <h4>Admin configuration tasks</h4>
+
+        <div class="row">
+            <div class="col-md-12 schedule_form">
+                <h5 class="bold bottom-border">Test results location</h5>
+                <form class="form-horizontal">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">Location: </label>
+                            <div class="col-sm-5"> 
+                                <input type="text" class="form-control" id="location-field" 
+                                    ng-model="out_dir">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                            <button ng-click="saveProperty('out_dir', out_dir)"
+                                class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 schedule_form">
+                <h5 class="bold bottom-border">Email configuration</h5>
+                <form class="form-horizontal">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">To: </label>
+                            <div class="col-sm-5"> 
+                                <textarea class="form-control" id="to-field"
+                                    rows="1" cols="60"
+                                    ng-model="to">
+                                </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">Cc: </label>
+                            <div class="col-sm-5"> 
+                                <textarea class="form-control" id="cc-field" 
+                                    rows="1" cols="60"
+                                    ng-model="cc">
+                                </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                            <button ng-click="saveEmailProperties()"
+                                class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">Subject: </label>
+                            <div class="col-sm-5"> 
+                                <textarea class="form-control" id="subject-field" 
+                                    ng-model="email_subject_template">
+                                </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                            <button ng-click="saveTemplate('email_subject_template')"
+                                class="btn btn-primary">Save Email Subject</button>
+                                &nbsp;&nbsp;&nbsp;
+                                <a href="{{download_href_prefix}}/download-template?name=email_subject_template">
+                                        Download Email subject template file.
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Upload Subject template: </label>
+                                <div class="col-sm-5"> 
+                                    <input type="file" class="form-control" id="email_subject_template" 
+                                        name="email_subject_template.ftl">
+                                </div>
+                                <button ng-click="uploadTemplate('email_subject_template', 'email_subject_template')"
+                                    class="btn btn-primary">Upload Email subject template</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Message: </label>
+                                <div class="col-sm-5"> 
+                                    <textarea class="form-control" id="message-field" 
+                                        rows="10" cols="60"
+                                        ng-model="email_body_template">
+                                    </textarea>
+                                    <br/>
+                                    <span>Message size : {{email_body_template.length}} characters</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button ng-click="saveTemplate('email_body_template')"
+                                    class="btn btn-primary">Save Email Body</button>
+                                &nbsp;&nbsp;&nbsp;
+                                <a href="{{download_href_prefix}}/download-template?name=email_body_template">
+                                        Download Email body template file.
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Upload Email template: </label>
+                                <div class="col-sm-5"> 
+                                    <input type="file" class="form-control" id="email_body_template" 
+                                        name="email_body_template.ftl">
+                                </div>
+                                <button ng-click="uploadTemplate('email_body_template', 'email_body_template')"
+                                    class="btn btn-primary">Upload Email body template</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+        <div class="row">
+            <div class="col-md-12 schedule_form">
+                <h5 class="bold bottom-border">SMS configuration</h5>
+                <form class="form-horizontal">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">Enable: </label>
+                            <div class="col-sm-1 pull-left"> 
+                                <input type="checkbox" class="form-control sms-enable-checkbox" 
+                                    ng-model="sms_enable"
+                                    id="sms_enable"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">Numbers: </label>
+                            <div class="col-sm-5"> 
+                                <textarea class="form-control" id="numbers-field"
+                                    rows="1" cols="60"
+                                    ng-model="sms_numbers" ng-disabled="!sms_enable">
+                                </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">SMS Size: </label>
+                            <div class="col-sm-5">
+                                <input type="text" ng-model="sms_max_size" id="sms_max_size" 
+                                    class="form-control" ng-disabled="!sms_enable" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="file-location">SMS Cron: </label>
+                            <div class="col-sm-5">
+                                <input type="text" ng-model="sms_job_cron" id="sms_job_cron" 
+                                    class="form-control" ng-disabled="!sms_enable" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                            <button ng-click="saveSMSProperties()"
+                                class="btn btn-primary"
+                                >Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Message: </label>
+                                <div class="col-sm-5"> 
+                                    <textarea
+                                        class="form-control" id="sms_message-field" 
+                                        rows="10" cols="60"
+                                        ng-model="sms_template" ng-disabled="!sms_enable">
+                                    </textarea>
+                                    <br/>
+                                    <span>Message size : 
+                                        <span
+                ng-class="(sms_message.length >= sms_max_size) ? 'text-red': ''"
+                                            >{{sms_max_size - sms_template.length}}</span> 
+                                            characters left
+                                        (maximum {{sms_max_size}} characters allowed)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button ng-click="saveTemplate('sms_template')"
+                                    class="btn btn-primary" ng-disabled="!sms_enable">Save SMS Message</button>
+                                &nbsp;&nbsp;&nbsp;
+                                <a href="{{download_href_prefix}}/download-template?name=sms_template">
+                                        Download SMS Message template file.
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Upload SMS template: </label>
+                                <div class="col-sm-5"> 
+                                    <input type="file" class="form-control" id="sms_template" 
+                                        name="sms_template.ftl" ng-disabled="!sms_enable">
+                                </div>
+                                <button ng-click="uploadTemplate('sms_template', 'sms_template')"
+                                    class="btn btn-primary" ng-disabled="!sms_enable">Upload SMS Message template</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 schedule_form">
+                <h5 class="bold bottom-border">Results Retention</h5>
+                <form class="form-horizontal">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Duration: </label>
+                                <div class="col-sm-5"> 
+                                <input type="text" class="form-control" id="results_retention_duration" 
+                                    ng-model="results_retention_duration"
+                                    title="Results_retention_duration format = 1m (or) 4m (or) 1h (or) 2h (or) 1d (or) 10d (or) 6d1h2m">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Start: </label>
+                                <div class="col-sm-5"> 
+                                <input type="text" class="form-control" id="results_retention_start" 
+                                    ng-model="results_retention_start"
+                                    title="Please enter field like dd-mm-yyyy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Cron: </label>
+                                <div class="col-sm-5"> 
+                                <input type="text" class="form-control" id="results_retention_cron" 
+                                    ng-model="results_retention_cron">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                            <button ng-click="saveRetentionProperties()"
+                                class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-12 schedule_form">
+                    <h5 class="bold bottom-border">All Properties as file</h5>
+                    <form class="form-horizontal">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="form-group">
+                                <label class="control-label col-sm-2" for="file-location">Properties file: </label>
+                                <div class="col-sm-5"> 
+                                    <input type="file" class="form-control" id="file-upload" 
+                                        name="app.properties">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <a href="{{download_href_prefix}}/download-properties">
+                                        Download current properties file.
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group"> 
+                                <div class="col-sm-offset-2 col-sm-10">
+                                <button ng-click="setPropertiesFile()"
+                                    class="btn btn-primary">Upload properties file</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+    </div>
+</div>

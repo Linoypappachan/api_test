@@ -1,0 +1,67 @@
+<div id="test-details-main" class="row" ng-controller="TestDetailsController as testDetailsCtrl">
+    <div class="col-md-12 tab-heading">
+        <h4>Test details</h4> 
+        <table class="table table-hover">
+            <tr>
+                <td class="label_td">Name</td>
+                <td class="value_td">{{result.name}}</td>
+            </tr>
+            <tr>
+                <td class="label_td">Description</td>
+                <td class="value_td">{{result.desc}}</td>
+            </tr>
+            <tr>
+                <td class="label_td">Status</td>
+                <td ng-class="(result.status == 'FAIL') ? 
+                    'text-red bold value_td':'text-green bold value_td'">{{result.status}}</td>
+            </tr>
+            <tr>
+                <td class="label_td">Test URL</td>
+                <td class="value_td">{{result.url}}</td>
+            </tr>
+            <tr>
+                <td class="label_td">HTTP Method</td>
+                <td class="value_td">{{result.verb}}</td>
+            </tr>
+            <tr ng-if="result.params && result.params.form">
+                <td class="label_td">Form params</td>
+                <td class="value_td">
+                    <ul ng-repeat="form_param in result.params.form">
+                        <li><span>{{form_param.name}}</span> - <span>{{form_param.value}}</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr ng-if="result.params && result.params.header">
+                <td class="label_td">Header params</td>
+                <td class="value_td">
+                    <ul ng-repeat="header_param in result.params.header">
+                        <li><span>{{header_param.name}}</span> - <span>{{header_param.value}}</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr ng-if="result.params && result.params.query">
+                <td class="label_td">Query params</td>
+                <td class="value_td">
+                    <ul ng-repeat="query_param in result.params.query">
+                        <li><span>{{query_param.name}}</span> - <span>{{query_param.value}}</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr ng-if="result.params && result.params.url">
+                <td class="label_td">URL(path) params</td>
+                <td class="value_td">
+                    <ul ng-repeat="url_param in result.params.url">
+                        <li><span>{{url_param.name}}</span> - <span>{{url_param.value}}</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="label_td">Error message</td>
+                <td class="value_td">{{result.message}}</td>
+            </tr>
+            <tr>
+                <td class="label_td">Error - stack</td>
+                <td class="value_td">{{result.exception}}</td>
+            </tr>
+    </div>
+</div>

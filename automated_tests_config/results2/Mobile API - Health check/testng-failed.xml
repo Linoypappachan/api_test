@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Mobile API - Health check]">
+  <test name="rest-services-availability(failed)" parallel="methods">
+    <parameter name="init" value="https://www.epg.ae/api_mobile/init"/>
+    <parameter name="os" value="android"/>
+    <parameter name="app_version" value="1.0.0"/>
+    <parameter name="hostIp" value="192.168.111.110"/>
+    <parameter name="os_version" value="Android 4.5"/>
+    <parameter name="loggedUser" value="sherin@hashinclu.de"/>
+    <parameter name="usernameapi" value="https://www.epg.ae/api_mobile/account/username-exists?username="/>
+    <parameter name="loggedPassword" value="Test@123"/>
+    <parameter name="deviceid" value="f12321321355899kkRRwe"/>
+    <parameter name="csvDownLoad" value="http://intranet/svc_bulkmail/rs/lookup/service_list/217371"/>
+    <parameter name="healthcheck" value="https://www.epg.ae/api_mobile/health-check"/>
+    <parameter name="apptoken" value="toKMcMS0IqL0TtGSoFL3"/>
+    <parameter name="devicename" value="Samsung N9005"/>
+    <parameter name="accountlogin" value="https://www.epg.ae/api_mobile/account/login"/>
+    <parameter name="username" value="faisalsa"/>
+    <classes>
+      <class name="com.epg.mobile.tests.HealthCheckTestCase">
+        <methods>
+          <include name="testUserName" invocation-numbers="0"/>
+          <include name="check200Status"/>
+          <include name="init"/>
+          <include name="testLogin" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.epg.mobile.tests.HealthCheckTestCase -->
+    </classes>
+  </test> <!-- rest-services-availability(failed) -->
+</suite> <!-- Failed suite [Mobile API - Health check] -->

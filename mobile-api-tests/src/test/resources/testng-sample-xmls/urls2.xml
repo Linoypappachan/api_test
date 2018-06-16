@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<test-cases>    
+    <test-case id="customer-info" priority="2">
+        <name>Customer info</name>
+        <description>Customer information</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/svc_customermanagement/rs/customer_profile/325055/info</url>
+    </test-case>
+    <test-case id="healthcheck" priority="3">
+        <name>Mobile API - Health check</name>
+        <description>Checks the mobile services are up and running</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/health-check</url>
+    </test-case>
+    <test-case id="init" priority="4">
+        <name>init</name>
+        <description>init</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>POST</verb>
+        <url>http://intranet/api_mobile/init</url>
+        <params>
+			<query>
+				<param name="app_token" value="toKMcMS0IqL0TtGSoFL3"></param>
+                <param name="device_id" value="f12321321355899kkRRwe"></param>
+                <param name="device_name" value="Samsung N9005"></param>
+                <param name="os" value="android"></param>
+                <param name="app_version" value="1.0.0"></param>
+                <param name="os_version" value="Android 4.5"></param>
+			</query>
+		</params>
+    </test-case>
+    <test-case id="mobileapimetadata" priority="11" login="true" session="true">
+        <name>Mobile API - meta data</name>
+        <description>Mobile API - meta data</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/mobilebeta/meta?timestamp=20160821</url>
+    </test-case>
+    <test-case id="login" priority="5">
+        <name>login</name>
+        <description>login</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>POST</verb>
+        <url>http://intranet/api_mobile/account/login</url>
+        <params>
+			<query>
+				<param name="username" value="bmtest"></param>
+                <param name="password" value="123"></param>
+                <param name="question" value=""></param>
+                <param name="answer" value=""></param>
+                <param name="auth_type" value="PWD_ONLY"></param>
+			</query>
+		</params>
+    </test-case>
+    <test-case id="userExsist" login="true">
+        <name>User exist - Mobile API</name>
+        <description>To check if the user exist in the system</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/api_mobile/account/username-exists?username=bmtest</url>
+    </test-case>
+    
+    <test-case id="rentPostboxMetadata" priority="8">
+        <name>Rent P.O. Box</name>
+        <description>Rent P.O. Box meta data</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/rentpostbox/api/rentpobox/applicationformdata?lang=en</url>
+    </test-case>
+    <test-case id="renewPostboxMetadata" priority="9">
+        <name>Renew P.O Box </name>
+        <description>Renew P.O. Box meta data</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/renewpostbox/api/renewpobox/applicationformdata?lang=en</url>
+    </test-case>
+    <test-case id="poboxAvailability" priority="10">
+        <name>Is P.O Box available</name>
+        <description>poboxAvailability</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/rentpostbox/api/rentpobox/pobox/availability?poboxNumber=5556</url>
+    </test-case>
+    <test-case id="poboxRentalPrice" priority="11">
+        <name>P.O Box rental price</name>
+        <description>P.O Box rental price</description>
+        <schedule>0 0 0/1 * * ?</schedule>
+        <verb>GET</verb>
+        <url>http://intranet/rentpostbox/api/rentpobox/pobox/product/rental-price</url>
+    </test-case>
+</test-cases>

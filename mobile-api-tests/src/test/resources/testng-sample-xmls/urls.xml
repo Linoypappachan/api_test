@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<test-cases>
+  <test-case id="healthcheck" priority="1" login="false" session="false" proxy="false" >
+	<name>Health check</name>
+	<description>This is to validate health check API</description>
+	<schedule>0 0 0/4 * * ?</schedule>
+	<verb>GET</verb>
+	<url>https://www.epg.ae/api_mobile/health-check</url>
+  </test-case>
+  <test-case id="username" priority="8">
+	<name>User name check</name>
+	<description>This is to validate user name existence</description>
+	<schedule>0 0 0/4 * * ?</schedule>
+	<verb>GET</verb>
+	<url>https://www.epg.ae/api_mobile/account/username-exists</url>
+	<params>
+      <query>
+      <param name="username" value="faisalsa">
+      </param>
+    </query>
+  </params>
+  </test-case>
+</test-cases>
